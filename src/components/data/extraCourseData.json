@@ -1,0 +1,13 @@
+[
+    { "id": 1, "total_hours": 17, "students": 15489 },
+    { "id": 2, "total_hours": 30.5, "students": 17218 },
+    { "id": 3, "total_hours": 21, "students": 2199 },
+    { "id": 4, "total_hours": 22.5, "students": 172594 },
+    { "id": 5, "total_hours": 25.5, "students": 83841 },
+    { "id": 6, "total_hours": 54, "students": 66080 },
+    { "id": 7, "total_hours": 23, "students": 38801 },
+    { "id": 8, "total_hours": 15.5, "students": 320910},
+    { "id": 9, "total_hours": 27.5, "students": 32018 },
+    { "id": 10, "total_hours": 77.5, "students": 26580 }
+  ]
+  

@@ -1,0 +1,58 @@
+[
+    {
+      "id": 1,
+      "name": "Personal Plan",
+      "subtitle": "For you",
+      "icon": "/assets/icons/person.svg",
+      "audience": "Individual",
+      "price": "Starting at ₹850 per month",
+      "note": "Billed monthly or annually. Cancel anytime.",
+      "ctaText": "Start subscription",
+      "features": [
+        "Access to 12,000+ top courses",
+        "Certification prep",
+        "Goal-focused recommendations",
+        "AI-powered coding exercises"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Team Plan",
+      "subtitle": "For your team",
+      "icon": "/assets/icons/people.svg",
+      "audience": "2 to 20 people",
+      "price": "₹2,000 a month per user",
+      "note": "Billed annually. Cancel anytime.",
+      "ctaText": "Start subscription",
+      "features": [
+        "Access to 12,000+ top courses",
+        "Certification prep",
+        "Goal-focused recommendations",
+        "AI-powered coding exercises",
+        "Analytics and adoption reports"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Enterprise Plan",
+      "subtitle": "For your whole organization",
+      "icon": "/assets/icons/people.svg",
+      "audience": "More than 20 people",
+      "price": "Contact sales for pricing",
+      "note": "",
+      "ctaText": "Request a demo",
+      "features": [
+        "Access to 27,000+ top courses",
+        "Certification prep",
+        "Goal-focused recommendations",
+        "AI-powered coding exercises",
+        "Advanced analytics and insights",
+        "Dedicated customer success team",
+        "International course collection featuring 15 languages",
+        "Customizable content",
+        "Hands-on tech training with add-on",
+        "Strategic implementation services with add-on"
+      ]
+    }
+  ]
+  

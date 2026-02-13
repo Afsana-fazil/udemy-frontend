@@ -1,0 +1,33 @@
+[
+    {
+        "name": "Ronny",
+        "message": "Posted an announcement",
+        "title": "Veo3 now Available in Canva | AI videos with sound",
+        "description": "Google's latest AI video tool, Veo3, the most powerful around today, is now available right inside Canva!",
+        "small": "Check out the full update here:",
+        "sub_title": " Veo 3 Now in Canva! Instant Cinematic AI Videos with Sound",
+        "link": "https://youtu.be/okS77TsZfH4",
+        "image": "/assets/announcement1.webp",
+        "team": "Team RonDi."
+    },
+    {
+        "name": "Ronny",
+        "message": "Posted an announcement",
+        "title": "Design a Comic Strip with Canva + ChatGPT",
+        "description": "I've just published a step-by-step tutorial that shows you how to design an entire comic strip using Canva, ChatGPT, and Sora—all with free tools!",
+        "sub_title": "I Made a Comic Using Only ChatGPT & Canva AI",
+        "link": "https://youtu.be/9i_-EgB1F60",
+        "image": "/assets/announcement2.webp",
+        "team": "Team RonDi."
+    },
+    {
+        "name": "Ronny",
+        "message": "Posted an announcement",
+        "title": " Your Website in 20 min (completely FREE)",
+        "description": "I'd like to share our latest Canva tutorial with you!",
+        "sub_title": "Create a Free Website with Canva in 20 Minutes!",
+        "link": "https://youtu.be/ebTEtLIFjOI",
+        "image": "/assets/announcement3.webp",
+        "team": "Team RonDi."
+    }
+]
