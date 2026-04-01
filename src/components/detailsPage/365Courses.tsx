@@ -22,7 +22,7 @@ const Courses = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const res = await fetch("http://localhost:8000/api/courses/?created_by=365&limit=3");
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/courses/?created_by=365&limit=3`);
         const data = await res.json();
         // Map to ensure 'image' property exists for CourseCard
         const normalized = (data.results || data).map((course: any) => ({

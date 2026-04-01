@@ -1,10 +1,10 @@
-"use client";
-
-import React from 'react';
-import CourseVideos from '@/components/pages/CourseVideos'; 
+import { Suspense } from 'react';
+import CourseVideos from '@/components/pages/CourseVideos';
 
 export default function CourseVideosPage() {
-    return (
-        <CourseVideos />
-    );
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <CourseVideos />
+    </Suspense>
+  );
 }

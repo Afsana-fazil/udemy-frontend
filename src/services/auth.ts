@@ -27,7 +27,7 @@ export function removeToken() {
 }
 
 export async function login(username: string, password: string) {
-  const res = await fetch('http://localhost:8000/api/auth/login/', {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/login/`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ username, password }),
@@ -49,7 +49,7 @@ export async function login(username: string, password: string) {
 }
 
 export async function register(fullName: string, email: string, password: string) {
-  const res = await fetch('http://localhost:8000/api/auth/register/', {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/register/`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ 

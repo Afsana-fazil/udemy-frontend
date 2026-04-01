@@ -4,13 +4,13 @@ import React, { useEffect, useState } from "react";
 import CourseCard from "@/components/ui/CourseCard";
 
 const JulianCourses = () => {
-  const [courses, setCourses] = useState([]);
+  const [courses, setCourses] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const res = await fetch("http://localhost:8000/api/courses/?created_by=Julian&limit=3");
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/courses/?created_by=Julian&limit=3`);
         const data = await res.json();
         setCourses(data.results || data);
       } catch (error) {

@@ -22,7 +22,7 @@ export default function StoriesSlider() {
   const router = useRouter()
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/stories/')
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/stories/`)
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`)

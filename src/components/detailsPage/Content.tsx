@@ -54,7 +54,7 @@ export default function Content({ courseId, purchased }: ContentProps) {
   const { user } = useAuth();
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/sections/')
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/sections/`)
       .then((res) => res.json())
       .then((data) => {
         setSections(data);

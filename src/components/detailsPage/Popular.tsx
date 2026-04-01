@@ -54,7 +54,7 @@ export default function Popular() {
   const { user, token } = useAuth();
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/courses/")
+    fetch(`${API_BASE}/courses/`)
       .then((res) => res.json())
       .then((apiCourses: ApiCourse[]) => {
         const selected = apiCourses.slice(0, 10);

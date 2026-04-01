@@ -20,7 +20,7 @@ interface CourseCardProps {
   disableLink?: boolean;
 }
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api';
+const API_BASE = process.env.NEXT_PUBLIC_API_URL;
 
 export default function CourseCard({ course, disableLink = false }: CourseCardProps) {
   const [wishlisted, setWishlisted] = useState(false);
@@ -93,11 +93,8 @@ export default function CourseCard({ course, disableLink = false }: CourseCardPr
       <div className="relative">
         <img
           src={course.image}
-          alt={`Course image for ${course.title}`}
+          alt={course.title}
           className="w-full h-40 object-cover mb-2 rounded-t-lg"
-          onError={(e) => {
-            e.currentTarget.src = 'https://via.placeholder.com/400x240/6366f1/ffffff?text=Course+Image';
-          }}
         />
         {/* Wishlist Icon on Hover */}
         <button
@@ -129,16 +126,6 @@ export default function CourseCard({ course, disableLink = false }: CourseCardPr
         <div className="flex items-center gap-1 text-sm mt-1">
           {course.rating_point && (
             <span className="text-sm font-bold text-[#8b4309]">{course.rating_point}</span>
-          )}
-          {course.rating && (
-            <img 
-              src={course.rating} 
-              alt="rating" 
-              className="w-20" 
-              onError={(e) => {
-                e.currentTarget.src = 'https://via.placeholder.com/80x20/ffd700/000000?text=★★★★☆';
-              }}
-            />
           )}
           {course.reviews && (
             <small className="text-xs font-normal text-[#595c73]">({course.reviews})</small>

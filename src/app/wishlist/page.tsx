@@ -1,21 +1,14 @@
 "use client";
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api';
 
-// Utility to get user-specific key
-function getUserKey(base: string, user: any) {
-  if (!user) return base + '_guest';
-  return user.id ? `${base}_${user.id}` : `${base}_${user.email}`;
-}
-
 export default function WishlistPage() {
   const [wishlistItems, setWishlistItems] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-  const { user, token } = useAuth();
-  const btnRefs = useRef<Record<string, React.RefObject<HTMLButtonElement>>>({});
+  const { token } = useAuth();
 
   useEffect(() => {
     if (!token) {
@@ -32,9 +25,7 @@ export default function WishlistPage() {
     })
       .then(res => res.json())
       .then(data => {
-        // Ensure wishlistItems is always an array
         let items = Array.isArray(data) ? data : (data.results || data.data || []);
-        console.log('Wishlist API response:', data, 'Parsed items:', items);
         setWishlistItems(items);
         setLoading(false);
       })
@@ -57,13 +48,6 @@ export default function WishlistPage() {
     window.dispatchEvent(new Event('wishlist-updated'));
   };
 
-  function getBtnRef(id: string | number) {
-    if (!btnRefs.current[id]) {
-      btnRefs.current[id] = useRef<HTMLButtonElement>(null);
-    }
-    return btnRefs.current[id];
-  }
-
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -77,7 +61,7 @@ export default function WishlistPage() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-lg shadow-sm p-6">
           <h1 className="text-3xl font-bold text-gray-900 mb-8">My Wishlist</h1>
-          <hr className='border-t border-solid border-gray-200  ' />
+          <hr className='border-t border-solid border-gray-200' />
           {wishlistItems.length === 0 ? (
             <div className="text-center py-12">
               <svg className="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -86,10 +70,7 @@ export default function WishlistPage() {
               <h3 className="mt-2 text-sm font-medium text-gray-900">No courses in wishlist</h3>
               <p className="mt-1 text-sm text-gray-500">Start adding courses to your wishlist to see them here.</p>
               <div className="mt-6">
-                <a
-                  href="/courses"
-                  className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700"
-                >
+                <a href="/courses" className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700">
                   Browse Courses
                 </a>
               </div>
@@ -111,11 +92,7 @@ export default function WishlistPage() {
                     </button>
                     <div className="flex-shrink-0">
                       {course.course.image && (
-                        <img
-                          src={course.course.image}
-                          alt={course.course.title}
-                          className="w-24 h-24 object-cover rounded-lg m-3"
-                        />
+                        <img src={course.course.image} alt={course.course.title} className="w-24 h-24 object-cover rounded-lg m-3" />
                       )}
                     </div>
                     <div className="flex-1 min-w-0 p-2">
@@ -149,4 +126,4 @@ export default function WishlistPage() {
       </div>
     </div>
   );
-} 
+}

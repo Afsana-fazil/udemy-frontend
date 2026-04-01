@@ -76,7 +76,7 @@ export default function CourseVideos() {
   const [openOther, setOpenOther] = useState<{[id: number]: boolean}>({});
   const [activeTab, setActiveTab] = useState('overview');
 
-  const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+  const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
   useEffect(() => {
     if (!courseId) {

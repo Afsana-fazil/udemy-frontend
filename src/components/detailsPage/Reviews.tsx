@@ -7,7 +7,7 @@ interface Review {
   name: string;
   time_ago: string;
   description?: string;
-  rating?: number;
+  rating?: string;
 }
 
 export default function Reviews() {
@@ -16,7 +16,7 @@ export default function Reviews() {
   const [reactions, setReactions] = useState<{ [key: number]: 'like' | 'dislike' | null }>({});
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/reviews/')
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/reviews/`)
       .then((res) => res.json())
       .then((data) => setReviews(data))
       .catch((error) => console.error('Error fetching reviews:', error));

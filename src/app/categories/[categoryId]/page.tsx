@@ -72,7 +72,7 @@ export default function CategoryPage({ params }: { params: Promise<{ categoryId:
     setError(null);
     
     // Fetch category details
-    fetch(`${BASE_URL}/api/main-categories/${categoryId}/`)
+    fetch(`${BASE_URL}/main-categories/${categoryId}/`)
       .then((res) => {
         if (!res.ok) {
           throw new Error('Category not found');
@@ -86,7 +86,7 @@ export default function CategoryPage({ params }: { params: Promise<{ categoryId:
         setCategory(data);
         
         // After getting category, fetch courses
-        return fetch(`${BASE_URL}/api/courses/?main_category=${categoryId}${activeSubcategory ? `&subcategory=${activeSubcategory}` : ''}`);
+        return fetch(`${BASE_URL}/courses/?main_category=${categoryId}${activeSubcategory ? `&subcategory=${activeSubcategory}` : ''}`);
       })
       .then((res) => {
         if (!res.ok) {

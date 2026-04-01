@@ -1,8 +1,14 @@
 "use client"
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 
-function InstructorStats({ rating, reviews, students, courses }) {
+
+function InstructorStats({ rating, reviews, students, courses }: { 
+  rating: number; 
+  reviews: number; 
+  students: number; 
+  courses: number; 
+}) {
   return (
     <div className="flex flex-col space-y-1.5 text-sm text-gray-600 mt-2">
       <div className="flex items-center gap-4">
@@ -62,7 +68,17 @@ function InstructorStats({ rating, reviews, students, courses }) {
   );
 }
 
-function InstructorCard({ name, title, imageSrc, rating, reviews, students, courses, bio, extraContent }) {
+function InstructorCard({ name, title, imageSrc, rating, reviews, students, courses, bio, extraContent }: { 
+  name: string; 
+  title: string; 
+  imageSrc: string; 
+  rating: number; 
+  reviews: number; 
+  students: number; 
+  courses: number; 
+  bio: React.ReactNode; 
+  extraContent: React.ReactNode; 
+}) {
   const [expanded, setExpanded] = useState(false);
   
   return (

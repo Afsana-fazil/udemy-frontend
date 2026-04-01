@@ -19,7 +19,7 @@ interface CourseDetailsProps {
   course: any;
 }
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api';
+const API_BASE = process.env.NEXT_PUBLIC_API_URL;
 
 export default function CourseDetails({ course }: CourseDetailsProps) {
   console.log('Course prop:', course);
@@ -332,15 +332,6 @@ export default function CourseDetails({ course }: CourseDetailsProps) {
                   <p className="text-[#2a2b3f] text-sm font-normal">Access this top-rated course, plus <br /> 13,000+ more top-rated courses, with a <br /> Udemy plan.
                   <a href="/plans" className="text-sm text-[#6d28d2] font-bold underline">See Plans & Pricing</a></p>
                   <div className="flex flex-col items-center gap-1 text-2xl font-bold text-[#2a2b3f] border-l border-r px-6 border-solid border-[#d1d2e0]">
-                    {courseData.rating_point}
-                    <img 
-                      src={courseData.rating} 
-                      alt={courseData.rating_point} 
-                      className="w-20" 
-                      onError={(e) => {
-                        e.currentTarget.src = 'https://via.placeholder.com/80x20/ffd700/000000?text=★★★★☆';
-                      }}
-                    />
                     <span className="text-sm text-[#595c73] font-normal underline mt-1">{courseData.reviews} ratings</span>
                   </div>
                   <div className="flex flex-col gap-1 items-center text-sm text-gray-300 px-5">

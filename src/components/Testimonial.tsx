@@ -18,7 +18,7 @@ export default function Testimonial() {
   const router = useRouter();
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/testimonials/')
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/testimonials/`)
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`)

@@ -39,7 +39,7 @@ function getUserKey(base: string, user: any) {
   return user.id ? `${base}_${user.id}` : `${base}_${user.email}`;
 }
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api';
+const API_BASE = process.env.NEXT_PUBLIC_API_URL;
 
 export default function Navbar() {
     const [cartCount, setCartCount] = useState(0);

@@ -53,7 +53,7 @@ export default function Categories() {
   const [canMainScrollLeft, setCanMainScrollLeft] = useState(false);
   const [canMainScrollRight, setCanMainScrollRight] = useState(false);
 
-  const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api";
+  const API_BASE = process.env.NEXT_PUBLIC_API_URL;
 
   // Fetch main categories
   useEffect(() => {

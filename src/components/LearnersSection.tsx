@@ -8,6 +8,8 @@ import { useSearch } from "../contexts/SearchContext";
 interface Course {
   id: number;
   title: string;
+  image: string;
+  price: number;
   description: string;
   created_by: string;
   [key: string]: any;
@@ -25,7 +27,7 @@ export default function LearnersSection() {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const res = await fetch("http://localhost:8000/api/courses/"); 
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/courses/`); 
         if (!res.ok) throw new Error("Failed to fetch courses");
         const data = await res.json();
 
