@@ -5,11 +5,10 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   async rewrites() {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://udemy-backend-j7bd.onrender.com/api';
     return [
       {
         source: "/api/:path*",
-        destination: `${apiUrl}/:path*`,
+        destination: `https://udemy-backend-j7bd.onrender.com/api/:path*`,
       },
     ];
   },
